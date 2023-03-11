@@ -82,11 +82,20 @@ let students = [
     }
 ];
 
+const data = students.reduce((acc, el)=> {
+    acc[el.id] = {...el}
+    delete acc[el.id].id
+    return acc
+}, {})
+
+console.log(data)
+
 /*console.log(students.reduce((acc,el)=>acc +el.scores, 0)) //сложить баллы студентв
 console.log(students.reduce((acc,)))*/
 
 
 
+/*
 function itReduce(func, startValue) {
     let acc = startValue
     for (let i = 0; i < this.length; i++) {
@@ -97,4 +106,4 @@ function itReduce(func, startValue) {
 
 Array.prototype.itReduce = itReduce
 
-console.log([1,2,3,4].itReduce((acc, el)=> acc + el, 0))
+console.log([1,2,3,4].itReduce((acc, el)=> acc + el, 0))*/
